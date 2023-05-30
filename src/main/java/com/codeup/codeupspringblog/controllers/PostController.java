@@ -14,6 +14,7 @@ public class PostController {
         return "posts index page";
     }
 
+
     @GetMapping("/posts/{id}")
     @ResponseBody
     public String individualPost() {
@@ -31,5 +32,4 @@ public class PostController {
     public String submitForm() {
         return "create a new post";
     }
-
 }

@@ -43,8 +43,7 @@ public class Ad {
     public Ad() {
     }
 
-    public Ad(long id, String title, String description) {
-        this.id = id;
+    public Ad(String title, String description) {
         this.title = title;
         this.description = description;
     }
