@@ -16,6 +16,10 @@ public class Ad {
     @Column(nullable = false)
     private String description;
 
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public long getId() {
         return id;
     }
@@ -40,11 +44,25 @@ public class Ad {
         this.description = description;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Ad() {
     }
 
     public Ad(String title, String description) {
         this.title = title;
         this.description = description;
+    }
+
+    public Ad(String title, String description, User user) {
+        this.title = title;
+        this.description = description;
+        this.user = user;
     }
 }
